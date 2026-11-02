@@ -26,7 +26,7 @@ sys.path.insert(0, os.path.abspath(os.path.join("..", "src")))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
+extensions = ["sphinxcontrib.cairosvgconverter"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -120,7 +120,7 @@ pygments_style = "sphinx"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
+html_static_path = []
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -180,10 +180,11 @@ latex_elements = {
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
+# Avoid colliding with the converted django-robots.svg badge.
 latex_documents = [
     (
         "index",
-        "django-robots.tex",
+        "django-robots-docs.tex",
         "django-robots Documentation",
         "Jannis Leidel",
         "manual",
